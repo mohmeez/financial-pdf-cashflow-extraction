@@ -1,1 +1,11 @@
-./data_extraction
+# Virtual environments
+data_extraction/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+
+# OS files
+.DS_Store
+Thumbs.db
+

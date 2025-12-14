@@ -6,15 +6,15 @@ This project demonstrates how to extract structured financial data from multi-pa
 
 The PDF used in this project simulates 12 accounts, each with its own Statement of Cash Flows across 12 pages, similar to real-world bank, treasury, or fund statements that analysts encounter in practice.
 
-----------------Extract Data from this PDF (12 accounts with each account summary------------
+ ### ----------------Extract Data from this PDF (12 accounts with each account summary------------
 
 ![pdf_sample](https://github.com/user-attachments/assets/4f8e81b8-2aa3-4c8e-9119-9ccc92d561c5)
 
 
-----------------------And create data frames using pandas for feature Engineering----------------------------------------------
+### -------------And create data frames using pandas for feature Engineering-----------------
 <img width="1202" height="976" alt="image" src="https://github.com/user-attachments/assets/875570cc-f528-4013-9665-7ff649a53a0f" />
 
-----------------------------------------------Excel output------------------------------------------------------------------------
+### ------------------------Excel output---------------------------------------------
 <img width="1272" height="1043" alt="image" src="https://github.com/user-attachments/assets/d3e03eb4-ada8-44f1-85fa-0ea3464a8710" />
 
 
@@ -132,48 +132,48 @@ Reporting dashboard
 
 # Run This Project Locally
 1) Clone the repository
-git clone https://github.com/mohmeez/financial-pdf-cashflow-extraction
-cd financial-pdf-cashflow-extraction
+    git clone https://github.com/mohmeez/financial-pdf-cashflow-extraction
 
-2) Create and activate a virtual environment
+    cd financial-pdf-cashflow-extraction
 
-Windows (PowerShell)
-python -m venv .venv
-.\.venv\Scripts\Activate
+3) Create and activate a virtual environment
+
+    Windows (PowerShell)
+    python -m venv .venv
+    .\.venv\Scripts\Activate
 
 
-Mac/Linux:
-python3 -m venv .venv
-source .venv/bin/activate
+    Mac/Linux:
+    python3 -m venv .venv
+    source .venv/bin/activate
 
 3) Install dependencies
-pip install --upgrade pip
-pip install -r requirements.txt
+    pip install --upgrade pip
+    pip install -r requirements.txt
 
 4) Run the project
-Option A: Run the notebook (recommended)
-jupyter notebook
+    Option A: Run the notebook (recommended)
+    jupyter notebook
 
+    Then open:
 
-Then open:
+    data_extraction.ipynb
 
-data_extraction.ipynb
+    Run the cells top to bottom.
 
-Run the cells top to bottom.
+    Option B: If you later add a Python script (recommended for production)
 
-Option B: If you later add a Python script (recommended for production)
+    If you create a script like extract_cashflows.py, then run:
 
-If you create a script like extract_cashflows.py, then run:
-
-python extract_cashflows.py
+    python extract_cashflows.py
 
 5) Outputs
 
-After running, the project generates extracted files such as:
-
-extracted_summaries.xlsx
-extracted_with_computed_columns.xlsx
-(or CSV versions if you save as CSV)
-
-If you've made it this far, Kudos!!
-Happpy Extracting :)
+    After running, the project generates extracted files such as:
+    
+    extracted_summaries.xlsx
+    extracted_with_computed_columns.xlsx
+    (or CSV versions if you save as CSV)
+    
+    If you've made it this far, Kudos!!
+    Happpy Extracting :)

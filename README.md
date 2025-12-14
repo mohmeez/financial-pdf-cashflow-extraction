@@ -20,7 +20,7 @@ The PDF used in this project simulates 12 accounts, each with its own Statement 
 
 
 
-This project is designed to showcase:
+### This project is designed to showcase:
 
 PDF data extraction
 
@@ -30,30 +30,33 @@ Financial computations
 
 Practical pandas usage for accounting-style workflows
 
-📂 Data Description
+## 📂 Data Description
 
 Each page of the PDF represents one account and contains:
 
 1. Account Summary Section
 
-Opening Cash
+* Opening Cash
 
-Total Inflows
+* Total Inflows
 
-Total Outflows
+* Total Outflows
 
-Net Change in Cash
+* Net Change in Cash
 
-Ending Cash
+* Ending Cash
 
 2. Transactions Table
-Column	Description
-Date	Transaction date
-Description	Transaction details
-Category	Type of transaction
-Inflow	Cash received
-Outflow	Cash paid
-🛠️ Technologies Used
+
+* Column	Description
+* Date	Transaction date
+* Description	Transaction details
+* Category	Type of transaction
+* Inflow	Cash received
+* Outflow	Cash paid
+
+
+## Technologies Used
 
 Python
 
@@ -63,12 +66,13 @@ pdfplumber – PDF text and table extraction
 
 NumPy – numerical operations
 
-⚙️ Project Workflow
-Step 1: Extract Data from PDF
+## Project Workflow
 
-Loop through all PDF pages
+# Step 1: Extract Data from PDF
 
-Extract account identifiers
+* Loop through all PDF pages
+
+* Extract account identifiers
 
 Parse:
 
@@ -78,37 +82,40 @@ Transaction tables
 
 Store extracted data in pandas DataFrames
 
-Step 2: Data Cleaning
+# Step 2: Data Cleaning
 
-Convert monetary values to numeric format
+* Convert monetary values to numeric format
 
-Parse dates
+* Parse dates
 
-Sort transactions chronologically by account
+* Sort transactions chronologically by account
 
-Step 3: Feature Engineering (New Columns)
+# Step 3: Feature Engineering (New Columns)
 
 The following four computed columns are created:
 
-Column	Description
-Net Cash Flow	Inflow - Outflow
-Running Balance	Cumulative cash position per account
-Outflow %	Share of each transaction relative to total account outflows
-Large Transaction Flag	Flags transactions above a defined threshold
-🧮 Key Financial Calculations
-Net Cash Flow
+### Column	Descriptions
+
+Net Cash Flow ---> Inflow - Outflow
+Running Balance ----> Cumulative cash position per account
+Outflow % -----> Share of each transaction relative to total account outflows
+Large Transaction Flag -----> Flags transactions above a defined threshold
+
+### Key Financial Calculations
+
+* Net Cash Flow:
 df_txn["Net Cash Flow"] = df_txn["Inflow"] - df_txn["Outflow"]
 
-Running Balance
+* Running Balance
 df_txn["Running Balance"] = (
     df_txn.groupby("Account")["Net Cash Flow"].cumsum()
     + df_txn["Opening Cash"]
 )
 
-Outflow Percentage
+* Outflow Percentage
 df_txn["Outflow %"] = df_txn["Outflow"] / df_txn.groupby("Account")["Outflow"].transform("sum")
 
-📁 Output Files
+### 📁 Output Files
 
 extracted_with_computed_columns.csv
 → Cleaned transaction-level data with computed financial metrics
@@ -116,7 +123,7 @@ extracted_with_computed_columns.csv
 extracted_summaries.csv
 → Account-level cash flow summaries
 
-These outputs are ready for:
+### These outputs are ready for:
 
 Financial analysis
 
@@ -126,21 +133,19 @@ Visualization
 
 Reporting dashboard
 
-🧑‍💻 Run This Project Locally
+# Run This Project Locally
 1) Clone the repository
-git clone <YOUR_REPO_URL_HERE>
+git clone https://github.com/mohmeez/financial-pdf-cashflow-extraction
 cd financial-pdf-cashflow-extraction
 
 2) Create and activate a virtual environment
 
 Windows (PowerShell)
-
 python -m venv .venv
 .\.venv\Scripts\Activate
 
 
-Mac/Linux
-
+Mac/Linux:
 python3 -m venv .venv
 source .venv/bin/activate
 
@@ -170,8 +175,8 @@ python extract_cashflows.py
 After running, the project generates extracted files such as:
 
 extracted_summaries.xlsx
-
 extracted_with_computed_columns.xlsx
 (or CSV versions if you save as CSV)
 
-
+If you've made it this far, Kudos!!
+Happpy Extracting :)

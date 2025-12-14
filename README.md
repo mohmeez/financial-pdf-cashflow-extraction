@@ -1,6 +1,6 @@
-### 📊 Financial PDF Data Extraction & Cash Flow Analysis (Python)
+# Financial PDF Data Extraction & Cash Flow Analysis (Python)
 
-Project Overview
+### Project Overview
 
 This project demonstrates how to extract structured financial data from multi-page PDF statements using Python, transform it into analyzable tabular data, and compute derived financial metrics such as net cash flow and running balances.
 
@@ -39,11 +39,8 @@ Each page of the PDF represents one account and contains:
 * Opening Cash
 
 * Total Inflows
-
 * Total Outflows
-
 * Net Change in Cash
-
 * Ending Cash
 
 2. Transactions Table
@@ -94,12 +91,12 @@ Store extracted data in pandas DataFrames
 
 The following four computed columns are created:
 
-### Column	Descriptions
+### Column	Descriptions (Formulas)
 
 Net Cash Flow ---> Inflow - Outflow
 Running Balance ----> Cumulative cash position per account
 Outflow % -----> Share of each transaction relative to total account outflows
-Large Transaction Flag -----> Flags transactions above a defined threshold
+Large Transaction Flag -----> Flags transactions above a defined threshold 
 
 ### Key Financial Calculations
 
